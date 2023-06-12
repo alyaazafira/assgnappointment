@@ -1,0 +1,18 @@
+### create visitors
+
+POST http://localhost:3000/appointment
+Content-Type: application/json
+
+{
+  "newname": "John Doe",
+  "newcompany": "ABC Corporation",
+  "newpurpose": "Meeting",
+  "newphoneNumber": "1234567890",
+  "newdate": "2023-06-15",
+  "newtime": "10:00 AM",
+  "newuser": {
+    "name": "Jane Smith",
+    "email": "janesmith@example.com",
+    "role": "Manager"
+  }
+}
