@@ -1,5 +1,6 @@
 const express = require('express');
 const { MongoClient } = require('mongodb');
+const moment = require('moment');
 
 const app = express();
 const port = 3000;
@@ -14,6 +15,9 @@ const dbName = 'appointment_visitor';
 app.post('/appointment', async (req, res) => {
   try {
     const { newname, newcompany, newpurpose, newphoneNumber, newdate, newtime, newuser } = req.body;
+    // Format the date and time using Moment.js
+    const formattedDate = moment(newdate).format('YYYY-MM-DD');
+    const formattedTime = moment(newtime, 'h:mm A').format('HH:mm');
     await register(newname, newcompany, newpurpose, newphoneNumber, newdate, newtime, newuser);
     res.send(req.body);
   } catch (error) {
@@ -34,7 +38,7 @@ async function register(newname, newcompany, newpurpose, newphoneNumber, newdate
     const db = client.db(dbName);
 
     // Insert the appointment into the "appointments" collection
-    const collection = db.collection('appointments');
+    const collection = db.collection('visitors');
     await collection.insertOne({
       name: newname,
       company: newcompany,

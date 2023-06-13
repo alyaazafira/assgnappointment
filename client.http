@@ -4,10 +4,10 @@ POST http://localhost:3000/appointment
 Content-Type: application/json
 
 {
-  "newname": "Alyaa Zafira",
-  "newcompany": "-",
-  "newpurpose": "Interview",
-  "newphoneNumber": "0112233445",
+  "newname": "Wan Zuhaida",
+  "newcompany": "Megah Holding",
+  "newpurpose": "Meeting",
+  "newphoneNumber": "01111111111",
   "newdate": "2023-7-1",
   "newtime": "09:00 AM",
   "newuser": {
