@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // MongoDB Connection URL and Database Name
 const url = 'mongodb+srv://yazap73:alyaa123.@alyaazafira.5qyapn0.mongodb.net/?retryWrites=true&w=majority';
-const dbName = 'appointments';
+const dbName = 'appointment_visitor';
 
 app.post('/appointment', async (req, res) => {
   try {
